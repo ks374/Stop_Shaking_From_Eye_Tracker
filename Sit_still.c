@@ -64,8 +64,8 @@ void read() {
     buffer_index++;
     buffer_index = buffer_check();
     
-    buffer_x[buffer_index] = dacq_data -> eye_x;
-    buffer_y[buffer_index] = dacq_data -> eye_y;
+    buffer_x[buffer_index] = dacq_data->eye_x;
+    buffer_y[buffer_index] = dacq_data->eye_y;
     
     struct timespec now;
     clock_gettime(CLOCK_MONOTONIC,&now);
