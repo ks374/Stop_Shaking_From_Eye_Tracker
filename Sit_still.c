@@ -1,4 +1,5 @@
 #include "Sit_still.h"
+#include <stddef.h>
 #include <sys/shm.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,19 +23,17 @@ static struct timespec start_time;
 void init() {
   if ((shmid = shmget((key_t)SHMKEY,
 		      sizeof(DACQINFO), 0666 | IPC_CREAT)) < 0) {
-    perror2("shmget", __FILE__, __LINE__);
     fprintf(stderr, "Sit_still:init -- kernel compiled with SHM/IPC?\n");
     exit(1);
   }
 
   if ((dacq_data = shmat(shmid, NULL, 0)) == NULL) {
-    perror2("shmat", __FILE__, __LINE__);
     fprintf(stderr, "Sit_still:init -- kernel compiled with SHM/IPC?\n");
     exit(1);
   }
   if ((semid = psem_init(SEMKEY)) < 0) {
     perror("psem_init");
-    fprintf(stderr, "%s: can't init semaphore\n", progname);
+    fprintf(stderr, "Sit_still: can't init semaphore\n");
     exit(1);
   }
   clock_gettime(CLOCK_MONOTONIC, &start_time);
@@ -50,7 +49,7 @@ void halt() {
 static int buffer_check(){
     //Make sure the buffer_index is wihtin a reasonable range. 
     if (buffer_index >= BUFFER_SIZE){
-        return (buffer_index % BUFFER_SIZE)
+        return (buffer_index % BUFFER_SIZE);
     }
     return buffer_index;
 }
