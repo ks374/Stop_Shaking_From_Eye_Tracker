@@ -1,3 +1,4 @@
+#pragma once
 /* title:   dacqinfo.h
 ** author:  jamie mazer
 ** created: Wed Jan  6 23:14:57 1999 mazer 
