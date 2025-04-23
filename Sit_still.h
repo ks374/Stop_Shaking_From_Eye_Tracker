@@ -7,7 +7,7 @@
 void init();
 void halt();
 void read();
-void head_writer(char *filename)
+void head_writer(char *filename);
 void writer(char *filename);
 //void analyzer();
 
