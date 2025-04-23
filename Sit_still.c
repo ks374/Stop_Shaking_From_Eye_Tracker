@@ -8,7 +8,7 @@
 
 // Shared memory pointers and identifiers
 static struct DACQINFO *dacq_data = NULL;  // Defined in datainfoe.h
-static int shm_id = -1;
+static int shmid = -1;
 static int semid = -1;
 
 // Data buffer configuration
