@@ -1,5 +1,5 @@
 #ifndef SIT_STILL_H
-#define SIT_STILL_H 
+#define SIT_STILL_H
 
 #include "dacqinfo_dacq.h"
 #include "psems.h"
