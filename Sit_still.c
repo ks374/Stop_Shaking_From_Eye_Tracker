@@ -54,7 +54,7 @@ static int buffer_check(){
     return buffer_index;
 }
 
-void read() {
+void read_eyedata() {
     //Read dacq_data into the buffer once. It should be called wihtin some mainloop(). 
     if (!dacq_data) {
         fprintf(stderr, "Sti_still: Did not find dacq_data properly. \n");

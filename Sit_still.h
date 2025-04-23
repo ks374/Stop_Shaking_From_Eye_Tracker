@@ -6,7 +6,7 @@
 
 void init();
 void halt();
-void read();
+void read_eyedata();
 void head_writer(char *filename);
 void writer(char *filename);
 //void analyzer();
