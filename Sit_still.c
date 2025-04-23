@@ -7,7 +7,7 @@
 #include <time.h>
 
 // Shared memory pointers and identifiers
-static struct DACQINFO *dacq_data = NULL;  // Defined in datainfoe.h
+static DACQINFO *dacq_data = NULL;  // Defined in datainfoe.h
 static int shmid = -1;
 static int semid = -1;
 
