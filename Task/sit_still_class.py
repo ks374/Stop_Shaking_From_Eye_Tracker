@@ -1,15 +1,15 @@
 import threading
 import time
-import sit_still_cython #A cython package to retrieve data from dacq_data. 
+from sit_still_cython import * #A cython package to retrieve data from dacq_data. 
 
 class sit_still_class:
-'''
-This class define a subthread process to monitor the eye position. 
-It can write the eye data into a csv file with timer. 
-It should be able to detect shaking of the eye data and send an END signal to the task. 
-
--- Chenghang 4/24/2025
-'''
+    '''
+    This class define a subthread process to monitor the eye position. 
+    It can write the eye data into a csv file with timer. 
+    It should be able to detect shaking of the eye data and send an END signal to the task. 
+    
+    -- Chenghang 4/24/2025
+    '''
     def __init__(self, task, app):
         self.task = task
         self.app = app

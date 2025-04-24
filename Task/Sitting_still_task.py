@@ -1,7 +1,7 @@
 import sys, types,os
 from pype import *
 import pygame as pg
-import sit_still_class
+from sit_still_class import *
 import threading
 
 """
@@ -17,7 +17,10 @@ def cleanup(app):
     app.taskObject.cleanup(app)
     
 def main(app):
-    filename = "~\\Name.csv"
+    '''
+    Start another thread once the task is loaded. 
+    '''
+    filename = "/home/shapelab/test.csv"
     task = fixationTask(app)
     sit_still_task = sit_still_class(task,app)
     
@@ -25,7 +28,8 @@ def main(app):
     app.globals = Holder()
     app.idlefb()
     
-    sit_still_thread = threading.Thread(target=sit_still_task.write_eye_data(filename),daemon=True)
+    #sit_still_thread = threading.Thread(target=sit_still_task.write_eye_data(filename),daemon=True)
+    sit_still_thread = threading.Thread(target=sit_still_task.write_eye_data,args=(filename,))
     sit_still_thread.start()
     
     try:
