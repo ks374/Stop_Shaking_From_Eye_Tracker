@@ -79,7 +79,7 @@ void head_writer(char *filename) {
         return;
     }
     
-    fprintf(fp,"TimeStamp,x,y");
+    fprintf(fp,"TimeStamp,x,y\n");
     fclose(fp);
 }
 

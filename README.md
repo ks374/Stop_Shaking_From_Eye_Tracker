@@ -1,9 +1,19 @@
 # Stop_Shaking_From_Eye_Tracker
 Train the animal to stop shaking based on his/her eye data
 
+# How to use: 
+pip/conda install Cython if you don't have it. 
+Compile sit_still.c in your working python environment using: 
+python ./Cython_compile.py build_ext --inplace
 
-## Plan: 
-Write a stopper.c and stopper.h: 
+Use use the methods, use: 
+from sit_still_cython import *
+
+Check the Task folder for example task files. 
+
+
+## Methods: 
+Sit_still.c: 
     We need to include the dacqinfo.h so our code know the structure of the semid. 
     Importantly, this needs to be same as the current PYPE version. So we need dacqinfo_dacq.h and dacqinfo_dacq2p.h. Need an argument to select the correct .h file. 
     
